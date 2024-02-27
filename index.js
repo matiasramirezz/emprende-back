@@ -1,11 +1,12 @@
- const http= require("http")
+require("dotenv").config()
+const http= require("http")
 
  function requestcontroller(){
-console.log("HOLA MUNDO!!")
-
-
-
+    //logica muestra funcion 
+    console.log("HOLA MUNDO!!")
  }
- const server= http.createServer(requestcontroller)
+ //config nuestro servidor 
+    const server= http.createServer(requestcontroller)
 
- server.listen(4000)
+    const port= process.env.port
+    server.listen(port, function (){ console.log("Aplicacion corriendo en el pruerto: " + port ) })
